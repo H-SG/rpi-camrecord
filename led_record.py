@@ -24,8 +24,8 @@ def get_video(state):
 
 # Setup LED control
 def switch_LED(state):
-	for item in LEDpins:
-    GPIO.output(item, state)
+    for item in LEDpins:
+        GPIO.output(item, state)
 
 # Setup GPIO config
 GPIO.setwarnings(False)
@@ -42,7 +42,7 @@ lOff = True
 # Configure LED GPIO pins
 for item in LEDpins:
     GPIO.setup(item, GPIO.OUT)
-	GPIO.output(item, lOff)
+    GPIO.output(item, lOff)
 
 # Configure switch GPIO pins
 GPIO.setup(switchState, GPIO.IN, pull_up_down=GPIO.PUD_UP)
@@ -51,10 +51,10 @@ GPIO.setup(switchState, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 flashes = 1
 while flashes < 4:
     switch_LED(lOn)
-	sleep(0.5)
-	switch_LED(lOff)
-	sleep(0.5)
-	flashes += 1
+    sleep(0.5)
+    switch_LED(lOff)
+    sleep(0.5)
+    flashes += 1
 
 # Pin check loop
 while True:
