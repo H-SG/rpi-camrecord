@@ -6,16 +6,16 @@ import subprocess
 
 # Setup getting an image
 def get_video(state):
-	folderName = "/home/pi/HumphreyData/"
-	if os.path.isdir(folderName)== False:
-	    os.makedirs(folderName)
+    folderName = "/home/pi/HumphreyData/"
+    if os.path.isdir(folderName)== False:
+        os.makedirs(folderName)
     fileNumber = 1
     filePath = folderName + str(fileNumber) + ".h264"
     while os.path.isfile(filePath):
         fileNumber += 1
         filePath = folderName + str(fileNumber) + ".h264"
     fileName = str(fileNumber)
-	cmdStr = "sudo raspivid -n -w 1024 -h 768 -t 0 -fps 2 -o %s/%s.h264" %(folderName, fileName)
+    cmdStr = "sudo raspivid -n -w 1024 -h 768 -t 0 -fps 2 -o %s/%s.h264" %(folderName, fileName)
     if state:
         capture = subprocess.Popen(cmdStr, shell=True)
     else:
