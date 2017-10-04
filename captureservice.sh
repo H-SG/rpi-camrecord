@@ -12,7 +12,7 @@
 
 # Change the next 3 lines to suit where you install your script and what you want to call it
 DIR=/home/pi/Desktop
-DAEMON=$DIR/LEDswitcherRevB.py
+DAEMON=$DIR/led_record.py
 DAEMON_NAME=captureservice
 
 # Add any command line options for your daemon here
